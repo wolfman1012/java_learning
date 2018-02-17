@@ -1,7 +1,5 @@
 package palindome;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 public class Palindrome {
 private String myTest = new String();
 
@@ -20,6 +18,9 @@ private String myTest = new String();
         String pString = myTest;
         int start = 0, end = pString.length() - 1, i;
         int center = (start + end) / 2;
+        if (myTest.isEmpty()){
+            return false;
+        }
         for (i = start; i <= center; i++) {
             if (pString.charAt(start) == pString.charAt(end)) {
                 start++;

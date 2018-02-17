@@ -2,7 +2,6 @@ package palindome;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import static org.junit.Assert.assertNotNull;
 
 public class PalindromeTest extends TestCase {
 //
@@ -31,7 +30,7 @@ public class PalindromeTest extends TestCase {
     public void testNotIsPalindrome() {
         Palindrome pTest = new Palindrome();
         pTest.setString("taco");
-        assertTrue(pTest.isPalindrome());
+        assertFalse(pTest.isPalindrome());
 
     }
 
@@ -39,7 +38,13 @@ public class PalindromeTest extends TestCase {
     public void testEmptyIsPalindrome() {
         Palindrome pTest = new Palindrome();
         pTest.setString("");
-        assertTrue(pTest.isPalindrome());
-
+        assertFalse(pTest.isPalindrome());
     }
+//
+//    @Test(expected = NullPointerException.class)
+//    public void testNullTester(){
+//        Palindrome pTest = new Palindrome();
+//        pTest.setString(null);
+//        assertTrue(pTest.isPalindrome());
+//    }
 }
